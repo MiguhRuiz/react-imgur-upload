@@ -1,3 +1,11 @@
+form {
+  margin-top: 2em;
+}
+
+input {
+  font-size: 1em;
+}
+
 .App {
   text-align: center;
 }
@@ -12,10 +20,6 @@
   height: 150px;
   padding: 20px;
   color: white;
-}
-
-.App-intro {
-  font-size: large;
 }
 
 @keyframes App-logo-spin {
