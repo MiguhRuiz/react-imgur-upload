@@ -8,6 +8,7 @@ class App extends Component {
     const r = new XMLHttpRequest()
     const d = new FormData()
     const e = document.getElementsByClassName('input-image')[0].files[0]
+    var u
 
     d.append('image', e)
 
@@ -16,7 +17,16 @@ class App extends Component {
     r.onreadystatechange = function () {
       if(r.status === 200 && r.readyState === 4) {
         let res = JSON.parse(r.responseText)
-        console.log(`La imagen fue subida a => https://i.imgur.com/${res.data.id}.png`)
+        u = `https://i.imgur.com/${res.data.id}.png`
+
+        const d = document.createElement('div')
+        d.className = 'image'
+        document.getElementsByTagName('body')[0].appendChild(d)
+
+        const i = document.createElement('img')
+        i.className = 'image-src'
+        i.src = u
+        document.getElementsByClassName('image')[0].appendChild(i)
       }
     }
     r.send(d)
@@ -29,7 +39,7 @@ class App extends Component {
           <h2>Elige una imagen para subir a Imgur</h2>
         </div>
         <form>
-          <input type="file" className="input-image" onChange={this.uploadImage}/>
+          <input type="file" className="input-image" onChange={this.uploadImage.bind(this)}/>
         </form>
       </div>
     );
