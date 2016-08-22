@@ -27,6 +27,16 @@ class App extends Component {
         i.className = 'image-src'
         i.src = u
         document.getElementsByClassName('image')[0].appendChild(i)
+
+        const a = document.createElement('a')
+        a.className= 'image-link'
+        a.href = u
+        document.getElementsByClassName('image')[0].appendChild(a)
+
+        const p = document.createElement('p')
+        p.className = 'image-url'
+        p.innerHTML = u
+        document.getElementsByClassName('image-link')[0].appendChild(p)
       }
     }
     r.send(d)
