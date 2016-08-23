@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "now": "^0.21.1",
+    "now-serve": "^0.3.1",
     "react-scripts": "0.2.1"
   },
   "dependencies": {
@@ -12,7 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && ns build"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
